@@ -1,0 +1,14 @@
+﻿<div>
+    <h1>@currentMovie.strMovieName</h1>
+    <h2>@currentMovie.strMovieRelDate</h2>
+    <img src="@currentMovie.strMovieLabel" alt="@currentMovie.strMovieName">
+
+    <button class="btn btn-danger" @onclick="()=>DeleteMovie.InvokeAsync(currentMovie)">Delete</button>
+</div>
+
+@code {
+    [Parameter] public Movies currentMovie { get; set; }
+    [Parameter] public EventCallback<Movies> DeleteMovie { get; set; }
+}
+
+
